@@ -89,18 +89,6 @@ body.body-profile {
   color: #2D74A4;
 }
 
-/*style="
-       position: fixed;
-       left: 0px;
-       top: 0px;
-       transform: translate(586px, 485px);
-       min-width: max-content;
-       --radix-popper-transform-origin: 0% 0px;
-       z-index: auto;
-       --radix-popper-available-width: 1094px;
-       --radix-popper-available-height: 20px;
-       --radix-popper-anchor-width: 768px;
-       --radix-popper-anchor-height: 0px;"><div data-side="bottom" data-align="start" data-state="open" role="dialog" id="radix-«rbv»" tabindex="-1" style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"><div></div></div></div> */
 .banner-right {
   display: flex;
   align-items: center;
@@ -117,6 +105,40 @@ body.body-profile {
   background: #aaa;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* Menu déroulant */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #1a1a1a;
+  min-width: 160px;
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a,
+.dropdown-menu p {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #2D74A4;
+  color: white;
 }
 
 /* -------- CONTENU -------- */
