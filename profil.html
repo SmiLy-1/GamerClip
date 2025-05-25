@@ -29,11 +29,23 @@
     </div>
     </form>
     <div class="banner-right">
-      <!-- ⚙️ -->
-      <!-- 🔔 -->
-      <a class="icon settings" href="#">⚙️</a>
-      <a class="icon notif" href="#">🔔</a>
-      <!-- <div data-radix-popper-content-wrapper=""-->
+      <div class="dropdown">
+        <a class="icon settings" href="#">⚙️</a>
+        <div class="dropdown-menu settings-menu">
+          <a href="#">Paramètres</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Aides et assistance</a>
+          <a href="#">affichage</a>
+          <a href="#">Déconnexion</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="icon notif" href="#">🔔</a>
+        <div class="dropdown-menu notif-menu">
+          <p>Aucune nouvelle notification</p>
+        </div>
+      </div>
     </div>
   </header>
   <div class="page-content">
@@ -67,4 +79,5 @@
       </div>
     </main>
   </div>
+  <script> src="js/script.js"</script>
 </body>
