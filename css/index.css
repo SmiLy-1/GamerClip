@@ -225,8 +225,8 @@ font-size: 1.1rem;
   .connection form {
     width: 90%;
     padding: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-top: 30px;
     gap: 16px;
   }
@@ -259,9 +259,5 @@ font-size: 1.1rem;
 
   .inscription {
     margin-left: 6px;
-  }
-
-  .separateur {
-    margin: 0 4px;
   }
 }
