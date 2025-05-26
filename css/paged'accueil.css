@@ -95,7 +95,38 @@ body.body-accueil {
   gap: 20px;
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 15px;
+  background-color: #1a1a1a;
+  min-width: 180px;
+  box-shadow: 0 0 15px #FF0000;
+  z-index: 999;
+  border-radius: 8px;
+  padding: 10px 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dropdown-content a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.dropdown-content a:hover {
+  color: #2D74A4;
+}
+.dropdown-content.show {
+  display: flex;
+}
+
 .icon {
+  display: flex;
+  position: relative;
+  left: 290px;
   font-size: 1.5rem;
   cursor: pointer;
 }
