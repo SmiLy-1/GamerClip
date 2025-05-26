@@ -30,19 +30,19 @@
     </form>
     <div class="banner-right">
       <div class="dropdown">
-        <a class="icon settings" href="#">⚙️</a>
-        <div class="dropdown-menu settings-menu">
+        <a class="icon" href="#">⚙️</a>
+        <div class="dropdown-content">
           <a href="#">Paramètres</a>
           <a href="#">Confidentialité</a>
           <a href="#">Aides et assistance</a>
-          <a href="#">affichage</a>
+          <a href="#">Affichage</a>
           <a href="#">Déconnexion</a>
         </div>
       </div>
 
       <div class="dropdown">
-        <a class="icon notif" href="#">🔔</a>
-        <div class="dropdown-menu notif-menu">
+        <a class="icon" href="#">🔔</a>
+        <div class="dropdown-content">
           <p>Aucune nouvelle notification</p>
         </div>
       </div>
@@ -63,9 +63,7 @@
     <!-- Contenu principal -->
     <main class="profile-main">
       <div class="profile-header">
-        <div class="profile-picture" title="Modifier l'image">
-          <img src="default-profile.png" alt="Profil">
-        </div>
+        <div class="profile-picture" title="Modifier l'image"></div>
         <div class="contenu">
           <a href="#">Partager un clip</a>
           <a href="#">Vidéo liker</a>
@@ -79,5 +77,31 @@
       </div>
     </main>
   </div>
-  <script> src="js/script.js"</script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+      const icon = dropdown.querySelector('.icon');
+      const menu = dropdown.querySelector('.dropdown-content');
+
+      icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // Ferme tous les autres menus
+        document.querySelectorAll('.dropdown-content').forEach(m => {
+          if (m !== menu) m.classList.remove('show');
+        });
+
+        // Bascule le menu cliqué
+        menu.classList.toggle('show');
+      });
+    });
+
+    // Ferme si clic en dehors
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown-content').forEach(m => m.classList.remove('show'));
+    });
+  });
+</script>
 </body>
