@@ -26,10 +26,26 @@
     </div>
     </form>
     <div class="banner-right">
-      <a class="icon settings" href="#">⚙️</a>
-      <a class="icon notif" href="#">🔔</a>
-      <a class="profile-pic" href="#"></a>
+      <div class="dropdown">
+        <a class="icon" href="#">⚙️</a>
+        <div class="dropdown-content">
+          <a href="#">Paramètres</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Aides et assistance</a>
+          <a href="#">Affichage</a>
+          <a href="#">Déconnexion</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="icon" href="#">🔔</a>
+        <div class="dropdown-content">
+          <p>Aucune nouvelle notification</p>
+        </div>
+        <a class="profile-pic" href="#"></a>
+      </div>
     </div>
+    <a class="profile-pic" href="#"></a>
   </header>
   <main class="main-container">
     <!-- Barre latérale gauche -->
@@ -55,4 +71,31 @@
       </div>
     </aside>
   </main>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+      const icon = dropdown.querySelector('.icon');
+      const menu = dropdown.querySelector('.dropdown-content');
+
+      icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // Ferme tous les autres menus
+        document.querySelectorAll('.dropdown-content').forEach(m => {
+          if (m !== menu) m.classList.remove('show');
+        });
+
+        // Bascule le menu cliqué
+        menu.classList.toggle('show');
+      });
+    });
+
+    // Ferme si clic en dehors
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown-content').forEach(m => m.classList.remove('show'));
+    });
+  });
+</script>
 </body>
